@@ -22,4 +22,10 @@ pipeline {
             }
         }
     }
+    stage('Run Application') {
+            steps {
+                bat 'mvn compile'
+                bat 'java -cp target/classes com.example.App'
+            }
+        }
 }
