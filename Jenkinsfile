@@ -9,19 +9,18 @@ pipeline {
                     url: 'https://github.com/aishwarya-dmk/cicd.git'
             }
         }
+    }
 
         stage('Build and Test') {
             steps {
                 bat 'mvn clean test'
             }
         }
-
         stage('Package') {
             steps {
                 bat 'mvn package'
             }
         }
-    }
     stage('Run Application') {
             steps {
                 bat 'mvn compile'
